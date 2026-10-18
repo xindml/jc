@@ -1,0 +1,252 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品盒子使用教程</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f0f4f8;
+            color: #1e293b;
+            font-family: system-ui, -apple-system, sans-serif;
+            overflow-x: hidden;
+        }
+        .page {
+            position: absolute;
+            width: 100%;
+            min-height:100vh;
+            top:0;
+            left:0;
+            opacity:0;
+            pointer-events:none;
+            transition: all 0.3s ease;
+            transform: translateX(20px);
+        }
+        .page.active {
+            opacity:1;
+            pointer-events:auto;
+            transform: translateX(0);
+        }
+        .page.back-leave{
+            transition: all 0.3s ease;
+            transform: translateX(-20px);
+            opacity:0;
+        }
+        .container {
+            max-width: 100%;
+            padding:20px 0 120px;
+        }
+        /* 页面大标题 */
+        .main-title{
+            text-align:center;
+            font-size:22px;
+            font-weight:700;
+            padding:20px 16px 10px;
+        }
+        .top-group{
+            margin:20px 16px;
+            background:#ffffff;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 2px 10px rgba(0,0,0,0.07);
+        }
+        .top-header{
+            padding:16px 20px;
+            font-size:17px;
+            font-weight:600;
+        }
+        .top-body{
+            padding:0 20px 16px 20px;
+        }
+        .item{
+            padding:9px 0;
+            cursor:pointer;
+            color:#2563eb;
+        }
+        .item:hover{
+            text-decoration:underline;
+        }
+
+        /* 视频子页面样式，左上角返回箭头+文字 */
+        .video-page{
+            background:#f0f4f8;
+        }
+        .video-nav{
+            background:#ffffff;
+            display:flex;
+            align-items:center;
+            padding:14px 16px;
+            box-shadow:0 2px 6px rgba(0,0,0,0.06);
+        }
+        .back-arrow{
+            font-size:22px;
+            cursor:pointer;
+            margin-right:4px;
+            color:#2563eb;
+        }
+        .back-text{
+            font-size:16px;
+            color:#2563eb;
+            cursor:pointer;
+        }
+        .video-page-title{
+            flex:1;
+            text-align:center;
+            font-size:17px;
+            font-weight:600;
+        }
+        .video-wrap {
+            width:calc(100% - 32px);
+            margin:16px;
+            aspect-ratio:16/9;
+            background:#000;
+            border-radius:10px;
+            overflow:hidden;
+        }
+        .video-wrap iframe {
+            width:100%;
+            height:100%;
+            border:none;
+        }
+
+        /* 底部常见问题模块 - 默认直接展开，移除折叠逻辑 */
+        .faq-block{
+            margin:0 16px 20px;
+            background:#ffffff;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 2px 10px rgba(0,0,0,0.07);
+        }
+        .faq-header{
+            padding:16px 20px;
+            font-size:17px;
+            font-weight:600;
+        }
+        .faq-body{
+            padding:0 20px 16px 20px;
+        }
+        .group-title{
+            font-weight:600;
+            margin:14px 0 8px;
+            color:#475569;
+        }
+    </style>
+</head>
+<body>
+<!-- 首页 -->
+<div id="homePage" class="page active">
+    <div class="container">
+        <h1 class="main-title">产品盒子使用教程</h1>
+        <div class="top-group">
+            <div class="top-header">首次安装盒子</div>
+            <div class="top-body">
+                <div class="item" data-bv="BV1Qdty6DE2r" data-name="第一步 设备安装">第一步 设备安装</div>
+                <div class="item" data-bv="BV1Hity6eEvF" data-name="第二步 手柄连接">第二步 手柄连接</div>
+                <div class="item" data-bv="BV1C9aP6eEkR" data-name="第三步 注册激活">第三步 注册激活</div>
+                <div class="item" data-bv="BV14sbj6wEL8" data-name="第四步 选择游戏">第四步 选择游戏</div>
+            </div>
+        </div>
+
+        <!-- 底部常见问题，直接全部展开 -->
+        <div class="faq-block">
+            <div class="faq-header">常见问题</div>
+            <div class="faq-body">
+                <div class="group-title">手柄教程</div>
+                <div class="item" data-bv="BV1mHbj6PEsU" data-name="手柄回连">手柄回连</div>
+                <div class="item" data-bv="BV1fJb46LEcb" data-name="怎么退出游戏">怎么退出游戏</div>
+                <div class="item" data-bv="BV1pqt26rEdZ" data-name="游戏快捷键">游戏快捷键</div>
+
+                <div class="group-title">优化教程</div>
+                <div class="item" data-bv="BV1udb56AEsk" data-name="延时优化">延时优化</div>
+                <div class="item" data-bv="BV1sybL6tERu" data-name="设备画面优化">设备画面优化</div>
+                <div class="item" data-bv="BV1Tsbj6AETQ" data-name="软件画面优化">软件画面优化</div>
+
+                <div class="group-title">游玩问题</div>
+                <div class="item" data-bv="BV11Bbp62ErJ" data-name="关闭状态栏">关闭状态栏</div>
+                <div class="item" data-bv="BV18Ybs6ZE7J" data-name="无法识别多个蓝牙">无法识别多个蓝牙</div>
+                <div class="item" data-bv="BV1bYbs6ZE1r" data-name="删除蓝牙设备">删除蓝牙设备</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 视频子页面（独立页面，左上角返回箭头+返回文字） -->
+<div id="videoPage" class="page video-page">
+    <div class="video-nav">
+        <div class="back-arrow" id="backBtn">←</div>
+        <div class="back-text" id="backText">返回</div>
+        <div class="video-page-title" id="videoTitle"></div>
+    </div>
+    <div class="video-wrap">
+        <iframe src="" allowfullscreen id="videoIframe"></iframe>
+    </div>
+</div>
+
+<script>
+const homePage = document.getElementById("homePage");
+const videoPage = document.getElementById("videoPage");
+const videoIframe = document.getElementById("videoIframe");
+const videoTitle = document.getElementById("videoTitle");
+const backBtn = document.getElementById("backBtn");
+const backText = document.getElementById("backText");
+
+// B站嵌入地址模板
+function getBilibiliEmbed(bv){
+    return `https://player.bilibili.com/player.html?bvid=${bv}&page=1&high_quality=1`;
+}
+
+// 进入视频页动画：向右推入翻页效果
+function openVideo(bv,name){
+    if(!bv){
+        alert("该视频BV号还未填写，请补充BV链接");
+        return;
+    }
+    videoIframe.src = getBilibiliEmbed(bv);
+    videoTitle.innerText = name;
+    homePage.classList.remove("active");
+    videoPage.classList.add("active");
+    window.scrollTo(0,0);
+}
+// 返回首页动画：向左滑回
+function goBackHome(){
+    videoPage.classList.remove("active");
+    videoPage.classList.add("back-leave");
+    setTimeout(()=>{
+        videoIframe.src = "";
+        videoPage.classList.remove("back-leave");
+        homePage.classList.add("active");
+    },250);
+}
+backBtn.addEventListener("click",goBackHome);
+backText.addEventListener("click",goBackHome);
+
+// 所有条目点击，跳转到视频子页面
+const allItems = document.querySelectorAll(".item");
+allItems.forEach(item=>{
+    item.addEventListener("click",()=>{
+        const bv = item.dataset.bv;
+        const name = item.dataset.name;
+        openVideo(bv,name);
+    })
+})
+
+// 手势：从左向右滑动返回
+let touchStartX = 0;
+let touchEndX = 0;
+videoPage.addEventListener("touchstart", e=>{
+    touchStartX = e.changedTouches[0].screenX;
+})
+videoPage.addEventListener("touchend", e=>{
+    touchEndX = e.changedTouches[0].screenX;
+    // 从左往右滑动，滑动距离大于60像素触发返回
+    if(touchEndX - touchStartX > 60 && touchStartX < 80){
+        goBackHome();
+    }
+})
+</script>
+</body>
+</html>
